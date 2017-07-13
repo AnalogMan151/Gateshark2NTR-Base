@@ -22,11 +22,19 @@ void	my_menus(void) {
     new_super_unselectable_entry(formattedVer, always_run);
 	new_separator();
 
-    new_entry_managed_note("Name of cheat", "Cheat note", nullCheat, NULLCHEAT, 0);
-    new_entry_managed("Name of cheat", nullCheat, NULLCHEAT, 0);
-    new_entry_managed("Name of Cheat", nullCheat, NULLCHEAT, AUTO_DISABLE);
+    new_spoiler("Spoiler 1");
+        new_entry_managed_note("Name of cheat", "Cheat note", nullCheat, NULLCHEAT, 0);
+        new_entry_managed("Name of cheat", nullCheat, NULLCHEAT, 0);
+        new_entry_managed("Name of Cheat", nullCheat, NULLCHEAT, AUTO_DISABLE);
+    exit_spoiler();
 
-    new_entry_arg_note("Name of cheat", "Cheat note", nullCheatToggle, 0, NULLCHEATTOGGLE, TOGGLE);
+    new_spoiler("Spoiler 2");
+        new_entry_arg_note("Name of cheat", "Cheat note", nullCheatToggle, 0, NULLCHEATTOGGLE, TOGGLE);
+    exit_spoiler();
+
+    new_line();
+    
     new_entry_arg("Name of cheat", nullCheatToggle, 0, NULLCHEATTOGGLE, TOGGLE);
+
 
 }
