@@ -2,6 +2,7 @@
 #define CHEATS_H
 #include "plugin.h"
 
+// Do not remove START
 typedef enum
 {
     EXECUTE_ONCE = BIT(0),
@@ -10,14 +11,18 @@ typedef enum
     TOGGLE_ENABLE = BIT(3),
     AUTO_DISABLE = BIT(4)
 }               entry_flags;
+// Do not remove END
 
+// Add identifier for each cheat to be used with disableCheat() and
+// AUTO_DISABLE
 enum {
     NULLCHEAT,
+    NULLCHEATTOGGLE,
 } e_identifiers;
 
 
 
-// Helpers
+// Helpers Do not remove
 void    disable_entry(int identifier);
 void    update_status(int state, int identifier);
 void    new_entry_note(char *str, const char * const note, void (*function)(void));
@@ -37,9 +42,11 @@ void    protect_region(u32 addr);
 bool    checkAddress(u32 address);
 int     randomNum(int start, int end);
 bool    getWifiStatus(void);
-
-
-
-
 void    overlayInit(void);
+
+// Cheats
+void    nullCheat(void);
+void    nullCheatToggle(u32 state);
+
+
 #endif
