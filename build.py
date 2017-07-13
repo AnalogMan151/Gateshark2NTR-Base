@@ -104,6 +104,12 @@ printf("Hello AnalogMan!\n");
 printf("How are you?\n");
 printf("I'm preparing to compile your " + COPYTOPATH + " plugin.\n");
 printf("Please just wait a second...\n");
+
+try:
+    run("mkdir -p obj");
+except Exception as e:
+    pass
+
 if (os.path.isfile("obj/cheats.o")):
     run("rm obj/*.o")
 if (os.path.isfile(COPYTOPATH)):

@@ -5,7 +5,7 @@ unsigned char *null_img = (void *)0x0;
 #ifdef OLD
     #define BACKGROUND			fill_img
 #else
-    #define BACKGROUND			sumo_bg
+    #define BACKGROUND			background_bg
 #endif
 #define BACKGROUND_POS_X		0
 #define BACKGROUND_POS_Y		42
